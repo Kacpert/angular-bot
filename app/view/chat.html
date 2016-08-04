@@ -1,0 +1,24 @@
+<div class="move">
+  <div class="row">
+    <div class="col-xs-12 dialog-box">
+
+      <div class="col-xs-11" *ngFor="let message of messages"
+        [class.answer]="message[0]" [class.question]="!message[0]">
+          <div >
+          
+              {{message[1]}}
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 typing-box">
+      <input #box (keyup.enter)="send(box.value); box.value = ''"
+                   placeholder="type here" id="input-typing"/>
+    </div>
+  </div>
+</div>
+      <!-- <span class="glyphicon glyphicon-menu-right" aria-hidden="true" (click)="send()"></span> -->
